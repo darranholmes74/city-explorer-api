@@ -32,12 +32,14 @@ app.get('/search', (request, response) => {
 app.get('/weather', (request, response) => {
     
 
-    // console.log(request.query.city_name);
+    console.log(request.query.city_name);
     let city = weather.find(item => 
-        item.city_name.toLowerCase() === request.query.city_name.toLowerCase())
+        item.city_name.toLowerCase() )//=== request.query.city_name.toLowerCase());
         if (city){
         let weatherArray = city.data.map(weather => new Forecast(weather.valid_date, weather.weather.description))
         response.status(200).send(weatherArray);
+
+        console.log(city);
     
      
 }
