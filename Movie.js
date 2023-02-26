@@ -13,7 +13,7 @@ let getMovie = async (request, response) => {
     let cityName = request.query.cityName
     let proxy = {
         url: `https://api.themoviedb.org/3/search/movie?api_key=${MOVIE_TOKEN}&language=en-US&page=1&include_adult=false&query=${cityName}`,
-        method: 'GET'
+        method: 'get'
     };
 
     let movieProxy = await axios(proxy);

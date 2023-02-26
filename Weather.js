@@ -1,7 +1,7 @@
 let axios = require('axios')
 
 const WEATHER_TOKEN = process.env.WEATHER_API_KEY
-
+console.log(WEATHER_TOKEN);
 let getWeather = async (request, response) => {
     let city_name = request.query.city_name
     let proxy = {
